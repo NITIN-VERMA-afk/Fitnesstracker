@@ -11,14 +11,16 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+
 import Switch from "@mui/material/Switch";
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ["Plans", "Go premium", "Diary"];
+const settings = ["Profile","Dashboard" ,"intermittent Fasting","Sleep","Glucose", "Recipe Discovery","progress","Workout Routines","Goals","Nutrition","Leaderboard","Recipes,Meals & Foods","Apps & Devices","steps"," community","Reminders","Friends","Messages","PrivacyCenter","settings" ,"Help","sync","Logout"];
 
-function ResponsiveAppBar({ cheak, change }) {
+
+function ResponsiveAppBar({cheak,change}:{ cheak:boolean, change:any
+ }) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -108,7 +110,7 @@ function ResponsiveAppBar({ cheak, change }) {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <FitnessCenterIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
