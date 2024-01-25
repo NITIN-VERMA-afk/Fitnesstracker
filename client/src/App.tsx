@@ -4,6 +4,7 @@ import AppBar from "./components/Appbar";
 import Card from "./components/Card";
 import Paper from "@mui/material/Paper";
 import { useState } from "react";
+import Footer from "./components/Footer"
 
 function App() {
   const[darkMode,setDarkMode]=useState(true);
@@ -21,6 +22,7 @@ function App() {
         <Paper className="h-250vh">
           <div>fitness tracker</div>
           <Card />
+          <Footer/>
         </Paper>
       </ThemeProvider>
     </>

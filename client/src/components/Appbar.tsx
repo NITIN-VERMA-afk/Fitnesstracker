@@ -11,16 +11,40 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 import Switch from "@mui/material/Switch";
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+// import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 
 const pages = ["Plans", "Go premium", "Diary"];
-const settings = ["Profile","Dashboard" ,"intermittent Fasting","Sleep","Glucose", "Recipe Discovery","progress","Workout Routines","Goals","Nutrition","Leaderboard","Recipes,Meals & Foods","Apps & Devices","steps"," community","Reminders","Friends","Messages","PrivacyCenter","settings" ,"Help","sync","Logout"];
+const settings = [
+  "Profile",
+  "Dashboard",
+  "intermittent Fasting",
+  "Sleep",
+  "Glucose",
+  "Recipe Discovery",
+  "progress",
+  "Workout Routines",
+  "Goals",
+  "Nutrition",
+  "Leaderboard",
+  "Recipes,Meals & Foods",
+  "Apps & Devices",
+  "steps",
+  " community",
+  "Reminders",
+  "Friends",
+  "Messages",
+  "PrivacyCenter",
+  "settings",
+  "Help",
+  "sync",
+  "Logout",
+];
 
-
-function ResponsiveAppBar({cheak,change}:{ cheak:boolean, change:any
- }) {
+function ResponsiveAppBar({ cheak, change }: { cheak: boolean; change: any }) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -44,17 +68,19 @@ function ResponsiveAppBar({cheak,change}:{ cheak:boolean, change:any
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <FitnessCenterIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+        {/* <Avatar alt="" src="public/images/Logo.jpg" /> */}
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href=""
             sx={{
               mr: 2,
+              
+              
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
@@ -64,14 +90,17 @@ function ResponsiveAppBar({cheak,change}:{ cheak:boolean, change:any
             }}
           >
             FitQuest
-            <Typography>
-             
+            <Box>
+              <LightModeIcon/>
+            
               <Switch
                 checked={cheak}
                 onChange={change}
                 inputProps={{ "aria-label": "controlled" }}
               />
-            </Typography>
+              <DarkModeIcon/>
+             
+            </Box>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -110,12 +139,12 @@ function ResponsiveAppBar({cheak,change}:{ cheak:boolean, change:any
               ))}
             </Menu>
           </Box>
-          <FitnessCenterIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+         
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href=""
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -127,6 +156,17 @@ function ResponsiveAppBar({cheak,change}:{ cheak:boolean, change:any
               textDecoration: "none",
             }}
           >
+            <Box>
+              <LightModeIcon/>
+            
+              <Switch
+                checked={cheak}
+                onChange={change}
+                inputProps={{ "aria-label": "controlled" }}
+              />
+              <DarkModeIcon/>
+             
+            </Box>
             FitQuest
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -139,14 +179,16 @@ function ResponsiveAppBar({cheak,change}:{ cheak:boolean, change:any
                 {page}
               </Button>
             ))}
+            
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="fitquest" src="public/images/Logo.jpg" />
               </IconButton>
             </Tooltip>
+
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
